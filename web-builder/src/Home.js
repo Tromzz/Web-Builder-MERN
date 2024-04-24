@@ -74,9 +74,9 @@ const Home = () => {
           <table className="table table-bordered table-hover">
             <thead>
               <tr>
-                <td>ID</td>
+                {/* <td>ID</td> */}
                 <td>Name</td>
-                <td>Slug</td>
+                {/* <td>Slug</td> */}
                 <td>Action</td>
               </tr>
             </thead>
@@ -84,9 +84,9 @@ const Home = () => {
               {pages
                 ? pages.map((page) => (
                     <tr key={page._id}>
-                      <td>{page._id}</td>
+                      {/* <td>{page._id}</td> */}
                       <td>{page.name}</td>
-                      <td>{page.slug}</td>
+                      {/* <td>{page.slug}</td> */}
                       <td>
                         <Link to={`/editor/${page._id}`}>Edit</Link>
                       </td>
