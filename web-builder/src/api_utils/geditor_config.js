@@ -4,6 +4,9 @@ import $ from "jquery";
 import grapesjsBlockBootstrap from "grapesjs-blocks-bootstrap4";
 import grapesjsPluginExport from "grapesjs-plugin-export";
 import grapesjsStyleBg from "grapesjs-style-bg";
+import grapesjsNavbar from 'grapesjs-navbar'
+import grapesjsCustomCode from 'grapesjs-custom-code';
+import grapesjsFloat from 'grapesjs-float';
 
 import {
   addEditorCommand,
@@ -21,6 +24,7 @@ import {
 import tailwindComponent from "../plugins/tailwind";
 import swiperComponent from "../plugins/swiper";
 import chartLibComponent from "../plugins/charts";
+import navbar from "../plugins/navibar"
 
 const geditorConfig = (assets, pageId) => {
   $(".panel__devices").html("");
@@ -61,6 +65,9 @@ const geditorConfig = (assets, pageId) => {
       grapesjsPluginExport,
       grapesjsStyleBg,
       chartLibComponent,
+      grapesjsNavbar,
+      grapesjsCustomCode,
+      grapesjsFloat,
     ],
     pluginsOpts: {
       tailwindComponent: {},
@@ -70,6 +77,9 @@ const geditorConfig = (assets, pageId) => {
       grapesjsPluginExport: {},
       grapesjsStyleBg: {},
       chartLibComponent: {},
+      navbar: {},
+      grapesjsCustomCode: {},
+      float: {},
     },
   });
 
