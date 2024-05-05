@@ -63,6 +63,7 @@ const Home = () => {
                 type="button"
                 className="btn btn-secondary btn-sm"
                 data-bs-dismiss="modal"
+                onClick={(e) => setName("")}
               >
                 Clear
               </button>
