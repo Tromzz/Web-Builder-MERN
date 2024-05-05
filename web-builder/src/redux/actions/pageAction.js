@@ -9,6 +9,10 @@ export const TYPES = {
   CREATE_PAGE_REQUEST: "CREATE_PAGE_REQUEST",
   CREATE_PAGE_ERROR: "CREATE_PAGE_ERROR",
   CREATE_PAGE_SUCCESS: "CREATE_PAGE_SUCCESS",
+
+  DELETE_PAGE_REQUEST: "DELETE_PAGE_REQUEST",
+  DELETE_PAGE_ERROR: "DELETE_PAGE_ERROR",
+  DELETE_PAGE_SUCCESS: "DELETE_PAGE_SUCCESS",
 };
 
 export const pageLoad = () => async (dispatch) => {
@@ -29,4 +33,28 @@ export const createPage = (name) => async (dispatch) => {
   } catch (error) {
     dispatch({ type: TYPES.CREATE_PAGE_ERROR, data: error });
   }
+}
+
+  export const deletePageRequest = () => ({
+    type: deletePageRequest
+  });
+  
+  export const deletePageError = (error) => ({
+    type: deletePageError,
+    payload: error
+  });
+  
+  export const deletePageSuccess = (pageId) => ({
+    type: deletePageSuccess,
+    payload: pageId
+  });
+  
+  export const deletePage = (pageId) => async (dispatch) => {
+    dispatch(deletePageRequest());
+    try {
+      await axios.delete(`${API_HOST}pages/${pageId}`);
+      dispatch(deletePageSuccess(pageId));
+    } catch (error) {
+      dispatch(deletePageError(error));
+    }
 };

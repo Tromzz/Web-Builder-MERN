@@ -1,3 +1,4 @@
+/* eslint-disable import/no-anonymous-default-export */
 const Chart = require("chart.js");
 export const LineChartBlock = (bm, category, label, type) => {
   bm.add(type, {
@@ -57,7 +58,7 @@ export default (dc, label, type, config) => {
       },
     },
     isComponent: (el) => {
-      if (el.getAttribute && el.getAttribute("data-gjs-type") == type) {
+      if (el.getAttribute && el.getAttribute("data-gjs-type") === type) {
         return { type };
       }
     },

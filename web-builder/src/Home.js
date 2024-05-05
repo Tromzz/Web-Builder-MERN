@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { createPage } from "./redux/actions/pageAction";
+import { createPage, deletePage } from "./redux/actions/pageAction";
 
 const Home = () => {
   const [name, setName] = useState("");
@@ -17,6 +17,12 @@ const Home = () => {
       return;
     }
     createPage(name)(dispatch);
+  };
+
+  const handleDelete = (pageId) => {
+    if (window.confirm("Are you sure you want to delete this page?")) {
+      dispatch(deletePage(pageId)); // Dispatch deletePage action
+    }
   };
 
   return (
@@ -74,21 +80,25 @@ const Home = () => {
           <table className="table table-bordered table-hover">
             <thead>
               <tr>
-                <td>ID</td>
+                {/* <td>ID</td> */}
                 <td>Name</td>
-                <td>Slug</td>
+                {/* <td>Slug</td> */}
                 <td>Action</td>
+                <td>Delete</td>
               </tr>
             </thead>
             <tbody>
               {pages
                 ? pages.map((page) => (
                     <tr key={page._id}>
-                      <td>{page._id}</td>
+                      {/* <td>{page._id}</td> */}
                       <td>{page.name}</td>
-                      <td>{page.slug}</td>
+                      {/* <td>{page.slug}</td> */}
                       <td>
                         <Link to={`/editor/${page._id}`}>Edit</Link>
+                      </td>
+                      <td>
+                      <button onClick={() => handleDelete(page._id)}>Delete</button> {/* Call handleDelete with page ID */}
                       </td>
                     </tr>
                   ))

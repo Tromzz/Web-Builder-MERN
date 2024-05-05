@@ -8,6 +8,10 @@ const {
   CREATE_PAGE_REQUEST,
   CREATE_PAGE_ERROR,
   CREATE_PAGE_SUCCESS,
+
+  DELETE_PAGE_REQUEST,
+  DELETE_PAGE_ERROR,
+  DELETE_PAGE_SUCCESS,
 } = TYPES;
 
 const initialState = {
@@ -16,6 +20,8 @@ const initialState = {
   pages: [],
   createPageError: "",
   createPageLoading: false,
+  deletePageLoading: false,
+  deletePageError: "",
 };
 
 const pageReducer = (state = initialState, action) => {
@@ -42,10 +48,25 @@ const pageReducer = (state = initialState, action) => {
       };
     case CREATE_PAGE_SUCCESS:
       return { ...state, createPageError: "", createPageLoading: false,  pages: [...state.pages, action.data]};
-
+    
+    case DELETE_PAGE_REQUEST:
+        return { ...state, deletePageLoading: true, deletePageError: "" };
+    case DELETE_PAGE_ERROR:
+        return {
+          ...state,
+          deletePageLoading: false,
+          deletePageError: action.payload,
+        };
+    case DELETE_PAGE_SUCCESS:
+        return {
+          ...state,
+          deletePageLoading: false,
+          pages: state.pages.filter(page => page._id !== action.payload)
+        };
+    
     default:
       return state;
-  }
+    }
 };
 
 export default pageReducer;

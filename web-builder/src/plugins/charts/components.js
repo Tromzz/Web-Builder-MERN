@@ -1,4 +1,5 @@
 import LineChart, { LineChartBlock } from "./components/LineChart";
+// eslint-disable-next-line import/no-anonymous-default-export
 export default (editor, opts = {}) => {
   const dc = editor.DomComponents;
   const bm = editor.BlockManager;

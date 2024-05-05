@@ -48,3 +48,18 @@ const PORT = process.env.APP_PORT || 8080;
 app.listen(PORT, () => {
   console.log(`server is running on port ${PORT}`);
 });
+
+
+// Delete Page Route
+app.delete('/:pageId', async (req, res) => {
+  const { pageId } = req.params;
+  try {
+    // Use mongoose to find and delete the page by its ID
+    await Page.findByIdAndDelete(pageId);
+    res.status(200).json({ message: 'Page deleted successfully' });
+  } catch (error) {
+    console.error('Error deleting page:', error);
+    res.status(500).json({ message: 'Internal server error' });
+  }
+});
+

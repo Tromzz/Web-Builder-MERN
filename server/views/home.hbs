@@ -57,6 +57,7 @@
                 <td>Name</td>
                 <td>Slug</td>
                 <td>Action</td>
+                <td>Delete</td>
               </tr>
             </thead>
             <tbody>
@@ -68,6 +69,9 @@
                   <td>{{this.slug}}</td>
                   <td>
                     <a href='/api/editor/{{this._id}}'>Edit</a>
+                  </td>
+                  <td>
+                    <button onclick='deletePage("{{this._id}}")'>Delete</button>
                   </td>
                 </tr>
               {{/each}}
