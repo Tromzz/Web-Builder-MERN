@@ -52,8 +52,8 @@ export const createPage = (name) => async (dispatch) => {
   export const deletePage = (pageId) => async (dispatch) => {
     dispatch(deletePageRequest());
     try {
-      await axios.delete(`${API_HOST}pages/${pageId}`);
-      dispatch(deletePageSuccess(pageId));
+      const response = await axios.delete(`${API_HOST}pages/${pageId}`);
+    dispatch({ type: TYPES.LIST_PAGE_REQUEST_SUCCESS, data: response.data });
     } catch (error) {
       dispatch(deletePageError(error));
     }

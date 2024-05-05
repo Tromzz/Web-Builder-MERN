@@ -24,7 +24,8 @@ export const details = async (req, res) => {
 export const deletePageRecord = async (req, res) => {
   const { pageId } = req.params;
   const data = await deletePage(pageId);
-  res.json(data);
+  const pages = await listPages();
+  res.json(pages);
 };
 export const update = async (req, res) => {
   const { pageId } = req.params;

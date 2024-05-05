@@ -116,26 +116,6 @@ const geditorConfig = (assets, pageId) => {
     }
   });
 
-  editor.Commands.add("delete-component", {
-    run: (editor, sender) => {
-      const selectedComponent = editor.getSelected(); // Get the selected component
-      if (selectedComponent) {
-        // Check if a component is selected
-        editor.DomComponents.remove(selectedComponent); // Remove the selected component from the editor
-        // Send a request to update the server/database
-        // Handle any errors that occur during the deletion process
-       delete(`/api/deleteComponent/${selectedComponent.getId()}`)
-         .then(response => {
-           console.log('Component deleted successfully');
-         })
-         .catch(error => {
-           console.error('Error deleting component:', error);
-         });
-      }
-    },
-  });
-
-
   setTimeout(() => {
     let categories = editor.BlockManager.getCategories();
     categories.each((category) => category.set("open", false));
