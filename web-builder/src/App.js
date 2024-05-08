@@ -24,7 +24,7 @@ function App() {
           <Route exact path="/" component={Home}></Route>
           <Route exact path="/editor/:pageId" component={Editor}></Route>
         </Switch>
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </Router>
   );

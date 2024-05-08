@@ -17,6 +17,7 @@ const Home = () => {
       return;
     }
     createPage(name)(dispatch);
+    setName("");
   };
 
   const handleDelete = (pageId) => {
@@ -31,14 +32,14 @@ const Home = () => {
         <div className="col-12 mt-5">
           <form id="create-page">
             <div className="modal-header">
-              <h5 className="modal-title" id="addPageModalLabel">
-                Create Page
-              </h5>
+              <h4 className="modal-title" id="addPageModalLabel">
+                Create Page Name
+              </h4>
             </div>
             <div className="modal-body">
               <div className="col-auto">
                 <label htmlFor="name" className="form-label">
-                  Name
+                  {/* Name */}
                 </label>
                 <input
                   type="text"
@@ -62,7 +63,6 @@ const Home = () => {
               <button
                 type="button"
                 className="btn btn-secondary btn-sm"
-                data-bs-dismiss="modal"
                 onClick={(e) => setName("")}
               >
                 Clear
@@ -99,7 +99,7 @@ const Home = () => {
                         <Link to={`/editor/${page._id}`}>Edit</Link>
                       </td>
                       <td>
-                      <button onClick={() => handleDelete(page._id)}>Delete</button> {/* Call handleDelete with page ID */}
+                      <Link to="#" onClick={() => handleDelete(page._id)}>Delete</Link>
                       </td>
                     </tr>
                   ))

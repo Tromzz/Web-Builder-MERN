@@ -33,14 +33,14 @@ body{
 	margin: 0 auto;
 }
 .header-bg{
-	border-top: 4px ridge rgb(252, 92, 2);
+	/* border-top: 4px ridge rgb(252, 92, 2); */
 	background: url('../images/header-bg.png');
 }
 .header{
 	padding:0;
 }
 .logo{
-	margin: -1% 0 -4%;
+	margin: auto;
 	float:left;
 }
 /*menu*/
