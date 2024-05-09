@@ -7,6 +7,8 @@ import grapesjsStyleBg from "grapesjs-style-bg";
 import grapesjsNavbar from 'grapesjs-navbar'
 import grapesjsCustomCode from 'grapesjs-custom-code';
 import grapesjsFloat from 'grapesjs-float';
+import grapesjsCKEditor from 'grapesjs-plugin-ckeditor';
+import grapesjsParserPostCSS from 'grapesjs-parser-postcss';
 
 import {
   addEditorCommand,
@@ -68,6 +70,8 @@ const geditorConfig = (assets, pageId) => {
       grapesjsNavbar,
       grapesjsCustomCode,
       grapesjsFloat,
+      grapesjsCKEditor,
+      grapesjsParserPostCSS,
     ],
     pluginsOpts: {
       tailwindComponent: {},
@@ -80,6 +84,8 @@ const geditorConfig = (assets, pageId) => {
       navbar: {},
       grapesjsCustomCode: {},
       float: {},
+      grapesjsCKEditor: {},
+      grapesjsParserPostCSS: {},
     },
   });
 

@@ -14,6 +14,8 @@
     "grapesjs-custom-code": "^1.0.2",
     "grapesjs-float": "^0.0.7",
     "grapesjs-navbar": "^1.0.2",
+    "grapesjs-parser-postcss": "^1.0.3",
+    "grapesjs-plugin-ckeditor": "^1.0.1",
     "grapesjs-plugin-export": "^1.0.7",
     "grapesjs-style-bg": "^1.0.5",
     "grapesjs-style-filter": "^1.0.2",

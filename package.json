@@ -1,5 +1,7 @@
 {
   "dependencies": {
-    "grapesjs-navbar": "^1.0.2"
+    "grapesjs-navbar": "^1.0.2",
+    "grapesjs-parser-postcss": "^1.0.3",
+    "grapesjs-plugin-ckeditor": "^1.0.1"
   }
 }
